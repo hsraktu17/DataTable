@@ -45,6 +45,12 @@ export default function Table() {
       id: "urn:uuid:ac1bbfff-9519-4967-9c64-...",
       dump: "CC-MAIN",
       url: "http://1027kord.com/car-wash-for-clara/"
+    },
+    {
+      text: "Car Wash For Clara! Now is your chance to help! 2 year old Clara Woodward has Cancer! Clara can’t sa…",
+      id: "urn:uuid:ac1bbfff-9519-4967-9c64-...",
+      dump: "CC-MAIN",
+      url: "http://1027kord.com/car-wash-for-clara/"
     }
   ];
 
@@ -64,7 +70,7 @@ export default function Table() {
         <table className="min-w-full bg-white border border-gray-200">
           <thead>
             <tr>
-              <th colSpan="4" className="py-2 px-4 border-b border-gray-200 bg-gray-50">
+              <th colSpan={4} className="py-2 px-4 border-b border-gray-200 bg-gray-50">
                 <div className="flex justify-between items-center">
                   <div className="relative w-full">
                     <button
