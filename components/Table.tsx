@@ -74,7 +74,7 @@ export default function Table() {
                 <div className="flex justify-between items-center">
                   <div className="relative w-full">
                     <button
-                      className="border-gray-300 border rounded p-2 flex items-center justify-between w-full"
+                      className="border-gray-300 rounded p-2 flex items-center justify-between w-full"
                       onClick={() => setShowSubsetOptions(!showSubsetOptions)}
                     >
                       <span className="text-slate-400">Subset: {subset}</span>
@@ -82,7 +82,7 @@ export default function Table() {
                       <RiArrowDownSLine className="ml-2" />
                     </button>
                     {showSubsetOptions && (
-                      <div className="absolute mt-1 w-full bg-white border border-gray-200 rounded shadow-lg z-10">
+                      <div className="absolute mt-1 w-full bg-white border-gray-200 rounded shadow-lg z-10">
                         {["default"].map((option, index) => (
                           <div
                             key={index}
@@ -95,9 +95,10 @@ export default function Table() {
                       </div>
                     )}
                   </div>
-                  <div className="relative w-full ml-4">
+                  <div className="h-full w-px bg-gray-300 mx-4"></div>
+                  <div className="relative w-full">
                     <button
-                      className="border-gray-300 border rounded p-2 flex items-center justify-between w-full"
+                      className="border-gray-300 rounded p-2 flex items-center justify-between w-full"
                       onClick={() => setShowSplitOptions(!showSplitOptions)}
                     >
                       <span className="text-slate-400">Split: {split}</span>
@@ -105,7 +106,7 @@ export default function Table() {
                       <RiArrowDownSLine className="ml-2" />
                     </button>
                     {showSplitOptions && (
-                      <div className="absolute mt-1 w-full bg-white border border-gray-200 rounded shadow-lg z-10">
+                      <div className="absolute mt-1 w-full bg-white border-gray-200 rounded shadow-lg z-10">
                         <div
                           className="p-2 cursor-pointer hover:bg-gray-100"
                           onClick={() => handleSplitSelect("train")}
@@ -119,23 +120,19 @@ export default function Table() {
               </th>
             </tr>
             <tr>
-              <th className="py-2 px-4 border-b border-gray-200 bg-gray-50">text</th>
-              <th className="py-2 px-4 border-b border-gray-200 bg-gray-50">id</th>
-              <th className="py-2 px-4 border-b border-gray-200 bg-gray-50">dump</th>
-              <th className="py-2 px-4 border-b border-gray-200 bg-gray-50">url</th>
+              <th className="py-2 px-4 border-b border-r border-gray-300 bg-gray-50">text</th>
+              <th className="py-2 px-4 border-b border-r border-gray-300 bg-gray-50">id</th>
+              <th className="py-2 px-4 border-b border-r border-gray-300 bg-gray-50">dump</th>
+              <th className="py-2 px-4 border-b bg-gray-50">url</th>
             </tr>
           </thead>
           <tbody>
             {data.map((row, index) => (
               <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
-                <td className="py-2 px-4 border-b border-gray-200">{row.text}</td>
-                <td className="py-2 px-4 border-b border-gray-200">{row.id}</td>
-                <td className="py-2 px-4 border-b border-gray-200">{row.dump}</td>
-                <td className="py-2 px-4 border-b border-gray-200">
-                  <a href={row.url} className="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">
-                    {row.url}
-                  </a>
-                </td>
+                <td className="py-2 px-4 border-b border-r border-gray-300">{row.text}</td>
+                <td className="py-2 px-4 border-b border-r border-gray-300">{row.id}</td>
+                <td className="py-2 px-4 border-b border-r border-gray-300">{row.dump}</td>
+                <td className="py-2 px-4 border-b">{row.url}</td>
               </tr>
             ))}
           </tbody>
